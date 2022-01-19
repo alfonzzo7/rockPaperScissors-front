@@ -37,7 +37,9 @@ export class TotalsComponent implements OnInit {
     Swal.fire({
       icon: 'warning',
       title: 'Do you want to delete the totals?',
-      confirmButtonText: 'Yes'
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No',
+      showCancelButton: true
     }).then((result) => {
       if (result.value) {
         this.loadingService.showLoading();
