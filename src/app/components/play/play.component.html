@@ -1,0 +1,53 @@
+<div class="container">
+    <h2>Let's Play</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="col-md-2">Round</th>
+                <th class="col-md-2">Player 1</th>
+                <th class="col-md-2">Player 2</th>
+                <th class="col-md-2">Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngIf="round.id > 0">
+                <td>{{round.id}}</td>
+                <td>{{round.player1}}</td>
+                <td>{{round.player2}}</td>
+                <td>{{round.result}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button (click)="playRound()" class="btn btn-primary" type="button" name="button">
+        Play Round
+    </button>
+    <button (click)="restar()" class="btn btn-danger" type="button" name="button">
+        Restar Game
+    </button>
+    <button [routerLink]="['/']" class="btn btn-secondary" type="button" name="button">
+        Home
+    </button>
+
+    <div class="custom-scrollbar">
+        <table class="table table-striped" *ngIf="rounds.length > 0">
+            <thead>
+                <tr>
+                    <th class="col-md-2">Round</th>
+                    <th class="col-md-2">Player 1</th>
+                    <th class="col-md-2">Player 2</th>
+                    <th class="col-md-2">Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let round of rounds">
+                    <td>{{round.id}}</td>
+                    <td>{{round.player1}}</td>
+                    <td>{{round.player2}}</td>
+                    <td>{{round.result}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="loading" [ngClass]="loadingService.hide">Loading</div>

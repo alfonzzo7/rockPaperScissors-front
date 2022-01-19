@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Totals</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="col-md-2">Rounds</th>
+                <th class="col-md-2">Player 1 Wins</th>
+                <th class="col-md-2">Player 2 Wins</th>
+                <th class="col-md-2">Draws</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{total.rounds}}</td>
+                <td>{{total.player1Wins}}</td>
+                <td>{{total.player2Wins}}</td>
+                <td>{{total.draws}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button (click)="reload()" class="btn btn-primary" type="button" name="button">
+        Reload
+    </button>
+    <button (click)="delete()" class="btn btn-danger" type="button" name="button">
+        Delete Totals
+    </button>
+    <button [routerLink]="['/']" class="btn btn-secondary" type="button" name="button">
+        Home
+    </button>
+</div>
+<div class="loading" [ngClass]="loadingService.hide">Loading</div>
