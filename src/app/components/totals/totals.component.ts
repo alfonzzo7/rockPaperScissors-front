@@ -16,6 +16,7 @@ export class TotalsComponent implements OnInit {
   constructor(private roundRestService: RoundRestService, public loadingService: LoadingService) { }
 
   ngOnInit() {
+    this.total = new Total();
     this.reload();
   }
 
