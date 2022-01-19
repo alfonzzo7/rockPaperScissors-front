@@ -37,11 +37,9 @@ export class TotalsComponent implements OnInit {
     Swal.fire({
       icon: 'warning',
       title: 'Do you want to delete the totals?',
-      showDenyButton: true,
-      confirmButtonText: 'Yes',
-      denyButtonText: 'No'
+      confirmButtonText: 'Yes'
     }).then((result) => {
-      if (result.isConfirmed) {
+      if (result.value) {
         this.loadingService.showLoading();
         this.roundRestService.deleteTotal()
           .subscribe( data => {

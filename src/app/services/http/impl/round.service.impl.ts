@@ -10,7 +10,7 @@ export class RoundRestService implements IRoundRestService {
   private readonly url: string;
   private readonly apiPath: string;
   constructor(private readonly http: HttpClient) {
-    this.url = 'http://localhost:8080/api-rock-paper-scissors/';
+    this.url = 'https://pacific-ridge-28086.herokuapp.com/api-rock-paper-scissors/';
     this.apiPath = `${this.url}api/v1/rounds`;
   }
 
